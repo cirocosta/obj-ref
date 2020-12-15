@@ -18,7 +18,7 @@ import (
 )
 
 var cli = struct {
-	Output string `long:"output" short:"o" choice:"yaml" choice:"text" default:"yaml"`
+	Output string `long:"output" short:"o" choice:"yaml" choice:"line" default:"yaml"`
 
 	Positional struct {
 		Resource string
@@ -114,7 +114,7 @@ func run(ctx context.Context) error {
 			Kind:       mapping.GroupVersionKind.Kind,
 			APIVersion: mapping.GroupVersionKind.GroupVersion().String(),
 		})
-	case "text":
+	case "line":
 		fmt.Printf("%s %s",
 			mapping.Resource.GroupResource().String(),
 			cli.Positional.Name,
