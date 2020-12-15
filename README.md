@@ -30,3 +30,7 @@ on:
 
 and then boom! you have the object reference right there.
 
+
+## LICENSE
+
+MIT
